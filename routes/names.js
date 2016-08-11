@@ -6,6 +6,7 @@ const Student = {
   checkIns: 0
 };
 
+
 router.get('/', function(req, res, next) {
   res.render('names.ejs', { Student });
 });
@@ -13,9 +14,6 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   const name = req.body.name;
   Student["names"].push(name);
-  for (var i=0; i < Student["names"].length; i++) {
-    Student["checkIns"] = i;
-  }
   res.redirect('/names');
 });
 

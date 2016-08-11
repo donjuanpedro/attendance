@@ -10,7 +10,11 @@
         <input type="submit" value="Submit">
       </form>
       <% Student.names.forEach((name) => { %>
-        <h3><%= Student.names %></h3>
+      <ul>
+        <li><%=  name %>
+          <button type ="button" onClick="addOne()" value="addOne" id="push"> Here.</button>
+        </li>
+      </ul>
       <% }) %>
 </body>
 </html>
