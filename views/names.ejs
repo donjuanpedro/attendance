@@ -2,15 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>My Second Express App</title>
+        <title>Attendance</title>
     </head>
     <body>
       <form method="POST" action="/names">
         <input type="text" name="name">
         <input type="submit" value="Submit">
       </form>
-      <% names.forEach((name) => { %>
-        <h3>Hello <%= name %></h3>
+      <% Student.names.forEach((name) => { %>
+        <h3><%= Student.names %></h3>
       <% }) %>
 </body>
 </html>

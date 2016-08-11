@@ -1,16 +1,28 @@
 const express = require('express');
 const router = express.Router();
 
-const names = ['Rick', 'Morty', 'Summer', 'Beth', 'Jerry'];
+const Student = {
+  names: [],
+  checkIns: []
+};
 
 router.get('/', function(req, res, next) {
-  res.render('names.ejs', { names });
+  res.render('names.ejs', { Student });
 });
 
 router.post('/', function(req, res, next) {
   const name = req.body.name;
-  names.push(name);
+  Student["names"].push(name);
+  if (name in Student["names"]===name) {
+    Student["names"].push(name);
+  }
+  else {
+    Student.checkIns.push("1");
+  }
   res.redirect('/names');
 });
+
+
+
 
 module.exports = router;
