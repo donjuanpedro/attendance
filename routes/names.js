@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Student = {
   names: [],
-  checkIns: []
+  checkIns: 0
 };
 
 router.get('/', function(req, res, next) {
@@ -13,11 +13,8 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   const name = req.body.name;
   Student["names"].push(name);
-  if (name in Student["names"]===name) {
-    Student["names"].push(name);
-  }
-  else {
-    Student.checkIns.push("1");
+  for (var i=0; i < Student["names"].length; i++) {
+    Student["checkIns"] = i;
   }
   res.redirect('/names');
 });
