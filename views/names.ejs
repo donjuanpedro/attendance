@@ -12,7 +12,16 @@
       <% Student.names.forEach((name) => { %>
       <ul>
         <li><%=  name %>
-          <button type ="button" onClick="addOne()" value="addOne" id="push"> Here.</button>
+            <div class="counter-object">
+              <script type="text/javascript">
+              var clicks = 0;
+              function updateClickCount() {
+                document.getElementById("button").innerHTML = clicks;
+              }
+              </script>
+              <button type="button" onClick="clicks++;updateClickCount();" id="push">Here.</button>
+              <div id="clickCount"></div>
+            </div>
         </li>
       </ul>
       <% }) %>

@@ -13,6 +13,11 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   const name = req.body.name;
+  const clicks = 1;
+  function addOne() {
+    clicks++;
+    alert(clicks);
+  };
   Student["names"].push(name);
   res.redirect('/names');
 });
